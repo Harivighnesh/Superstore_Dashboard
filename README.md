@@ -19,6 +19,7 @@ This project uses the **Sample - Superstore** dataset to create a compelling dat
 5. **Recommendations** – Summary of insights and strategic actions
 
 ##  Key Calculations
-- `Days to Ship`: Difference between Order Date and Ship Date using:
+- `Average Days to Ship`: Average time taken to ship an order from Order Date to Ship Date using:
   ```dax
-  Days to Ship = DATEDIFF('Orders'[Order Date], 'Orders'[Ship Date], DAY)
+  Average Days to Ship = AVERAGEX('Orders', DATEDIFF('Orders'[Order Date], 'Orders'[Ship Date], DAY))
+  
